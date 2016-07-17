@@ -1,0 +1,32 @@
+/**{
+  box-sizing: border-box;
+}*/
+
+form {
+  width:100%;
+  display:inline;
+}
+
+.username {
+  width:10%;
+  float:left;
+  display:inline;
+}
+
+.usernameInput{
+  width:90%;
+  float:left; 
+  display:inline;
+}
+
+.password {
+  width:10%;
+  float:left;
+  display:inline;
+}
+
+.passwordInput{
+  width:90%;
+  float:left; 
+  display:inline;
+}
