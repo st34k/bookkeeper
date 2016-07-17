@@ -8,26 +8,86 @@
 
   <form>
     <div class="field">Username:</div>
-    <div class="input"><input type="text" placeholder="Pick Username"/></div>
+    <div class="input"><input type="text" placeholder="Pick Username" id="username"/></div>
 
     <div class="field">E-mail:</div>
     <div class="input"><input type="text" placeholder="Type in your E-mail"/></div>
 
     <div class="field">Password:</div>
-    <div class="input"><input type="password" placeholder="Password"/></div>
+    <div class="input"><input type="password" placeholder="Password" id="password"/></div>
 
     <div class="field">Repeat Password:</div>
-    <div class="input"><input type="password" placeholder="Repeat Password"/></div>
+    <div class="input"><input type="password" placeholder="Repeat Password" id="repeatpass"/></div>
 
     <div class="field">Telephone:</div>
-    <div class="input"><input type="text"/ placeholder="Telephone"></div>
+    <div class="input"><input type="text"/ placeholder="Telephone" id="telephone"></div>
 
     <div class="field">Country:</div>
-    <div class="input"><input type="text" placeholder="Country" /></div>
+    <div class="input"><input type="text" placeholder="Country" id="country"/></div>
+     
+   </form>
 
-    <div class="submitButton"><button type="submit">Sign-up!</button></div> 
+  <div id="msg"></div>
+    <div class="submitButton"><button type="submit" onclick="submit()">Sign-up!</button></div> 
 
-  </form>
+   
+
+
+      <script type="text/javascript">
+        function submit() {
+          var password = document.getElementById('password').value;
+          var repeatpass=document.getElementById('repeatpass').value;
+          var country=document.getElementById('country').value;
+          var country1="Israel";
+          var country2="USA";
+          var username=document.getElementById('username').value;
+          var telephone=document.getElementById('telephone').value;
+
+
+          if (password.length<6){
+            document.getElementById('msg').innerHTML="<h2>password is too short</h2>";
+            document.getElementById('password').style.backgroundColor = "red";
+          }
+          
+
+          else if(password!==repeatpass){
+            document.getElementById('msg').innerHTML="<h2>Passwords dont match</h2>";
+            document.getElementById('msg').style.backgroundColor = "red";
+          }
+          
+          else if (country!==country1 && country!==country2) {
+            document.getElementById('msg').innerHTML="<h2>USA or Israel only</h2>";
+            document.getElementById('msg').style.backgroundColor = "red";
+          }
+
+          else if (username.indexOf(' ')!== -1){
+            document.getElementById('msg').innerHTML="Username contains spaces";
+            document.getElementById('msg').style.backgroundColor = "red";
+          }
+
+          else if(telephone.length=>15) {
+            document.getElementById('msg').innerHTML="Telephone is too long";
+            document.getElementById('msg').style.backgroundColor = "red";
+          }
+
+          else {
+            document.getElementById('msg').innerHTML="<h2>Submit clicked</h2>";
+            document.getElementById('msg').style.backgroundColor = "green";
+            }
+        }
+      </script>
+    
+
+ 
+
+
+ <!--    <script type="text/javascript">
+      function Validate() {
+
+      }
+
+    </script> -->
+
 
 
 </body>

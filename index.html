@@ -13,6 +13,8 @@
 
   <script type="text/javascript">
 
+
+
     var change1 = function(){
       document.getElementById('t1').innerHTML = "Read more books!";
     }
@@ -29,9 +31,25 @@
     else {change2();}}
 
 
+
   </script>
 
   <a href="login.html">Login</a>
   <a href="sign-up.html">Sign-Up</a>
+      <div id="button"></div>
+         <script type="text/javascript">
+
+          function createButton() {
+          var btn = document.createElement("button");
+          btn.appendChild(document.createTextNode("Dupe"));
+          // document.getElementById('button').appendChild(btn);
+          btn.onclick=createButton;
+          document.getElementById('button').appendChild(btn);
+         }
+         createButton();
+        </script>
+
+  
+    
 </body>
 </html>
